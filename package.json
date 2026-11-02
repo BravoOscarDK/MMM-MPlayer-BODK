@@ -1,0 +1,12 @@
+{
+  "name": "mmm-mplayer-bodk",
+  "version": "1.0.0",
+  "description": "MagicMirror² MPlayer module with supervised RTSP recovery",
+  "main": "MMM-MPlayer-BODK.js",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/BravoOscarDK/MMM-MPlayer-BODK.git" },
+  "homepage": "https://github.com/BravoOscarDK/MMM-MPlayer-BODK#readme",
+  "bugs": { "url": "https://github.com/BravoOscarDK/MMM-MPlayer-BODK/issues" },
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test", "check": "node --check MMM-MPlayer-BODK.js && node --check node_helper.js && node --check lib/config.js && node --check lib/player.js" }
+}
