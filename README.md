@@ -35,6 +35,7 @@ Clone this repository into your MagicMirror modules directory:
 cd ~/MagicMirror/modules
 git clone https://github.com/BravoOscarDK/MMM-MPlayer-BODK.git
 cd MMM-MPlayer-BODK
+npm install
 ```
 
 Alternatively, copy this project folder to:
@@ -46,7 +47,7 @@ Alternatively, copy this project folder to:
 Include `MMM-MPlayer-BODK.js`, `node_helper.js`, `package.json`, `LICENSE`,
 `README.md` and the complete `lib` directory. The `test` directory is optional
 for running tests. Do not copy the development directories `.upstream` or `.tools`.
-Keep the folder name exactly `MMM-MPlayer-BODK`. No `npm install` is required.
+Keep the folder name exactly `MMM-MPlayer-BODK`. Run `npm install` after updating.
 
 ### 3. Configure MagicMirror
 
@@ -58,6 +59,7 @@ Disable the original MMM-MPlayer module if installed.
   module: "MMM-MPlayer-BODK",
   position: "top_left",
   config: {
+    language: "en",
     showStatus: true,
     rtspStreamOverTcp: true,
     noSound: true,
@@ -123,7 +125,7 @@ Keep custom changes separate from the module source to make updates easier.
    If Git reports diverging branches or conflicting local changes, resolve them
    before continuing. This command does not create a merge commit.
 
-4. Read the updated README for configuration changes. No `npm install` is required
+4. Read the updated README for configuration changes. Run `npm install` after updating
    for the current version. If the test directory is included, optionally run:
 
    ```bash
@@ -253,3 +255,7 @@ Run automated tests with `npm test` and syntax checks with `npm run check`.
 Tests simulate processes and playback positions. They cover retries, stalls, forced
 termination, configuration and MagicMirror notifications. Physical cameras, MPlayer,
 Raspberry Pi, X11 and PIR hardware require testing in your installation.
+
+## Language
+
+English is the default, independently of the MagicMirror global language. Set `language: "da"` in this module's `config` for Danish, or `language: "en"` for English. Unsupported languages fall back to English. Custom labels and device names retain their configured values. Technical logs and diagnostic errors are in English.

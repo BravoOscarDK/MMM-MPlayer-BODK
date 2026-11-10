@@ -1,6 +1,33 @@
 /* global Module */
 Module.register("MMM-MPlayer-BODK", {
+  text(key) {
+    const texts = {
+      "en": {
+        "Camera": "Camera",
+        "connecting": "connecting",
+        "playing": "playing",
+        "stopped": "stopped",
+        "stalled": "stalled",
+        "retrying": "retrying",
+        "spawn-error": "spawn-error",
+        "player-closed": "player-closed"
+      },
+      "da": {
+        "Camera": "Kamera",
+        "connecting": "forbinder",
+        "playing": "afspiller",
+        "stopped": "stoppet",
+        "stalled": "gået i stå",
+        "retrying": "prøver igen",
+        "spawn-error": "startfejl",
+        "player-closed": "afspiller lukket"
+      }
+    };
+    const language = String(this.config.language || "en").toLowerCase().split(/[-_]/)[0];
+    return (Object.hasOwn(texts, language) ? texts[language] : texts.en)[key] || texts.en[key] || key;
+  },
   defaults: {
+    language: "en",
     windows: [], streamInterval: 30000, stopOnSuspend: true,
     page: null, showStatus: false
   },
@@ -43,7 +70,7 @@ Module.register("MMM-MPlayer-BODK", {
       if (!this.config.showStatus && status.state !== "configuration-error") continue;
       const line = document.createElement("div");
       line.className = "small dimmed";
-      line.textContent = status.state === "configuration-error" ? status.message : `Camera ${status.window + 1}: ${status.state}`;
+      line.textContent = status.state === "configuration-error" ? status.message : `${this.text("Camera")} ${status.window + 1}: ${this.text(status.state)}`;
       wrapper.appendChild(line);
     }
     return wrapper;
