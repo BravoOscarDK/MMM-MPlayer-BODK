@@ -6,6 +6,14 @@ A MagicMirror² module for RTSP cameras and video files with automatic reconnect
 Based on [evroom/MMM-MPlayer](https://github.com/evroom/MMM-MPlayer).
 The frontend and backend have been rewritten. The original MIT license is preserved in LICENSE.
 
+### Preview
+
+Optional status display with `showStatus: true` and two fictional playing streams. By default the status is hidden. Native MPlayer video windows are not part of the browser DOM and are not shown here. English is the default language.
+
+![MPlayer example with fictional data](docs/images/example.png)
+
+The [browser preview](docs/preview.html) uses fictional data only; it does not validate external services or hardware.
+
 ## Requirements
 
 - Linux with MPlayer and a graphical X11 session, such as a Raspberry Pi running MagicMirror².
