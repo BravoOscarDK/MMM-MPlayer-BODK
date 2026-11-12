@@ -3,3 +3,13 @@ node_modules/
 .tools/
 *.log
 config.local.js
+
+# Local agent instructions and editor settings
+AGENTS.md
+AGENTS.override.md
+CLAUDE.md
+.codex/
+.agents/
+.claude/
+.vscode/
+.idea/
